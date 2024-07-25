@@ -1,0 +1,4 @@
+#!/bin/sh
+
+layout=$(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap' | sed 's/.*(\(.*\))/\1/')
+printf "   $layout    "
